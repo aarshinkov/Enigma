@@ -1,4 +1,4 @@
-package com.aarshinkov.template.configurations;
+package com.aarshinkov.enigma.configurations;
 
 import java.util.*;
 import nz.net.ultraq.thymeleaf.layoutdialect.*;
@@ -20,7 +20,7 @@ public class ViewConfig implements WebMvcConfigurer {
 
   @Bean
   public SpringResourceTemplateResolver srtr() {
-    
+
     SpringResourceTemplateResolver srtr = new SpringResourceTemplateResolver();
     srtr.setPrefix("/WEB-INF/views/");
     srtr.setSuffix(".html");
@@ -43,7 +43,7 @@ public class ViewConfig implements WebMvcConfigurer {
 //  }
   @Bean
   public Set<IDialect> additionalDialects() {
-    
+
     Set<IDialect> additionalDialects = new HashSet<>();
     additionalDialects.add(layoutDialect());
 //    additionalDialects.add(ssd());
@@ -52,7 +52,7 @@ public class ViewConfig implements WebMvcConfigurer {
 
   @Bean
   public Set<ITemplateResolver> templateResolvers() {
-    
+
     Set<ITemplateResolver> templateResolvers = new HashSet<>();
 //    templateResolvers.add(cltr());
     templateResolvers.add(srtr());
@@ -62,7 +62,7 @@ public class ViewConfig implements WebMvcConfigurer {
 
   @Bean
   public SpringTemplateEngine templateEngine() {
-    
+
     SpringTemplateEngine templateEngine = new SpringTemplateEngine();
     templateEngine.setTemplateResolvers(templateResolvers());
     templateEngine.setAdditionalDialects(additionalDialects());
@@ -72,7 +72,7 @@ public class ViewConfig implements WebMvcConfigurer {
 
   @Bean
   public ThymeleafViewResolver viewResolver() {
-    
+
     ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
     viewResolver.setTemplateEngine(templateEngine());
     viewResolver.setCharacterEncoding("UTF-8");

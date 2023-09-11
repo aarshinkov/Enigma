@@ -1,4 +1,4 @@
-package com.aarshinkov.template.controllers;
+package com.aarshinkov.enigma.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

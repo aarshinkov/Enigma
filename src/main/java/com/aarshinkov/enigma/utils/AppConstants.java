@@ -1,4 +1,4 @@
-package com.aarshinkov.template.utils;
+package com.aarshinkov.enigma.utils;
 
 /**
  *

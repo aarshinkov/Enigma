@@ -11,16 +11,16 @@
   <property name="LOG_DIR" value="${catalina.home}/logs" />
 
   <appender name="FILE_GENERAL" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${LOG_DIR}/webapp.log</file>
+    <file>${LOG_DIR}/enigma.log</file>
 
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
       <charset>UTF-8</charset>
-      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} Web App | %-5level | %logger{0} \(%line\) - %msg%n</Pattern>
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} Enigma | %-5level | %logger{0} \(%line\) - %msg%n</Pattern>
     </encoder>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
       <!-- rollover daily -->
-      <fileNamePattern>${LOG_DIR}/archive/webapp.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+      <fileNamePattern>${LOG_DIR}/archive/enigma.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>5MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
@@ -30,11 +30,11 @@
   <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
       <charset>UTF-8</charset>
-      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} Web App | %-5level | %logger{0} \(%line\) - %msg%n</Pattern>
+      <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} Enigma | %-5level | %logger{0} \(%line\) - %msg%n</Pattern>
     </encoder>
   </appender>
 
-  <logger name="com.aarshinkov.template" level="debug" additivity="false">
+  <logger name="com.aarshinkov.enigma" level="debug" additivity="false">
     <appender-ref ref="FILE_GENERAL"/>
     <appender-ref ref="console"/>
   </logger>

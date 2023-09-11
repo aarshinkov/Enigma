@@ -1,4 +1,4 @@
-package com.aarshinkov.template.configurations;
+package com.aarshinkov.enigma.configurations;
 
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.*;
@@ -16,13 +16,13 @@ public class CoreConfiguration implements WebMvcConfigurer {
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    
+
     registry.addResourceHandler("/resources/**").addResourceLocations("WEB-INF/resources/");
   }
 
   @Bean
   public ReloadableResourceBundleMessageSource messageSource() {
-    
+
     ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
 //    messageSource.setBasenames("classpath:messages/messages");
     messageSource.setBasenames("classpath:messages/messages", "classpath:env");
@@ -33,7 +33,7 @@ public class CoreConfiguration implements WebMvcConfigurer {
 
   @Override
   public Validator getValidator() {
-    
+
     LocalValidatorFactoryBean validator = new LocalValidatorFactoryBean();
     validator.setValidationMessageSource(messageSource());
     return validator;

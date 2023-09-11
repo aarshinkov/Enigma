@@ -1,4 +1,4 @@
-package com.aarshinkov.template.aop;
+package com.aarshinkov.enigma.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -21,8 +21,8 @@ public class LogAspect {
 
   private final Logger log = LoggerFactory.getLogger(getClass());
 
-  @Before("execution(* com.aarshinkov.template.controllers.*.*(..))"
-          + " || execution(* com.aarshinkov.template.services.*.*(..))")
+  @Before("execution(* com.aarshinkov.enigma.controllers.*.*(..))"
+          + " || execution(* com.aarshinkov.enigma.services.*.*(..))")
   public void methodBegin(JoinPoint joinPoint) {
 
     final String CLASS_NAME = joinPoint.getTarget().getClass().getSimpleName();
@@ -34,10 +34,10 @@ public class LogAspect {
     log.debug(builder.toString());
   }
 
-  @Around("execution(* com.aarshinkov.template.controllers.*.*(..))"
-          + " || execution(* com.aarshinkov.template.services.*.*(..))")
+  @Around("execution(* com.aarshinkov.enigma.controllers.*.*(..))"
+          + " || execution(* com.aarshinkov.enigma.services.*.*(..))")
   public Object logExecTime(ProceedingJoinPoint pjp) throws Throwable {
-    
+
     final String CLASS_NAME = pjp.getTarget().getClass().getSimpleName();
     final String METHOD_NAME = pjp.getSignature().getName();
 

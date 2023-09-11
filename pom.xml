@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aarshinkov</groupId>
-	<artifactId>template</artifactId>
+	<artifactId>enigma</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>WebAppTemplate</name>
-	<description>Template for web application</description>
+	<name>Enigma</name>
+	<description>Enigma machine simulator</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
